@@ -1,0 +1,7 @@
+item,value
+posterior_draws,8000
+rope_probability_points,0.01
+analytic_n,126366
+stem_rate,0.408472215627621
+input_data,C:/Users/ricle/OneDrive - Universidad de Antioquia/Investigaciones/girls in STEM/github_bayesian_stem_saberpro_2022/data/processed/analytic_model_data.csv
+output_folder,C:/Users/ricle/OneDrive - Universidad de Antioquia/Investigaciones/girls in STEM/github_bayesian_stem_saberpro_2022/outputs

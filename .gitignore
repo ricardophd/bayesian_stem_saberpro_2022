@@ -1,0 +1,25 @@
+# Local R package library
+r_libs/
+
+# Raw ICFES data should not be committed to GitHub.
+cruces-SB11-SBPRO/
+dataSaber11/
+dataSaberPro/
+data/raw/*
+!data/raw/README.md
+
+# R session files
+.Rhistory
+.RData
+.RDataTmp
+.Rproj.user/
+
+# OS/editor clutter
+.DS_Store
+Thumbs.db
+
+# Large binary model object (optional: remove next line if you want to version the RDS)
+# outputs/models/*.rds
+
+# Temporary git artefacts created by sandboxed environments
+.git/config.lock
