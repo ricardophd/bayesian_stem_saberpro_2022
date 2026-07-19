@@ -813,19 +813,6 @@ plot_differences <- function(contrast_summary) {
     theme_publication()
 }
 
-plot_probability_women_lower <- function(contrast_summary) {
-  contrast_summary <- order_subject_facets(contrast_summary)
-  ggplot(contrast_summary, aes(x = quintile, y = pr_women_lower)) +
-    geom_hline(yintercept = 0.5, color = "grey35", linewidth = 0.35) +
-    geom_col(fill = "#587C6D", width = 0.72) +
-    facet_wrap(~ subject_label, nrow = 1) +
-    scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +
-    labs(
-      x = "Saber 11 quintile",
-      y = "Pr(Women < Men)"
-    ) +
-    theme_publication()
-}
 
 plot_offset_contrasts <- function(offset_summary) {
   offset_summary <- order_subject_facets(offset_summary)
@@ -902,13 +889,11 @@ fwrite(pred_results$offsets, file.path(TABLE_DIR, "09_bayesian_one_quintile_offs
 
 p_pred <- plot_predictions(pred_results$summary)
 p_diff <- plot_differences(pred_results$contrasts)
-p_lower <- plot_probability_women_lower(pred_results$contrasts)
 p_offset <- plot_offset_contrasts(pred_results$offsets)
 
 save_plot(p_pred, "02_bayesian_predicted_probability_by_quintile_gender", width = 9, height = 4.8)
 save_plot(p_diff, "03_bayesian_gender_difference_same_quintile", width = 9, height = 4.8)
-save_plot(p_lower, "04_probability_women_lower_than_men_same_quintile", width = 9, height = 4.8)
-save_plot(p_offset, "05_one_quintile_offset_contrast", width = 9.5, height = 5.2)
+save_plot(p_offset, "04_one_quintile_offset_contrast", width = 9.5, height = 5.2)
 
 run_info <- data.table(
   item = c(
