@@ -65,7 +65,7 @@ quintile_levels <- paste0("Q", 1:5)
 subject_specs <- data.table(
   subject = c("math", "science", "language"),
   model_col = c("math_q", "science_q", "language_q"),
-  label = c("Matematicas", "Ciencias naturales", "Lenguaje")
+  label = c("Mathematics", "Natural sciences", "Language")
 )
 
 theme_publication <- function(base_size = 11) {
@@ -369,7 +369,6 @@ plot_observed <- function(obs_summary) {
     scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, NA)) +
     scale_color_manual(values = c("Men" = "#2D5F8B", "Women" = "#C85A3E")) +
     labs(
-      title = "Observed STEM selection by Saber 11 performance quintile",
       x = "Saber 11 quintile",
       y = "Posterior STEM rate"
     ) +
@@ -387,8 +386,6 @@ plot_predictions <- function(pred_summary) {
     scale_color_manual(values = c("Men" = "#2D5F8B", "Women" = "#C85A3E")) +
     scale_fill_manual(values = c("Men" = "#2D5F8B", "Women" = "#C85A3E")) +
     labs(
-      title = "Bayesian predicted probability of STEM selection",
-      subtitle = "Other Saber 11 performance areas fixed at Q3; NSE and cohort fixed at their modal values",
       x = "Saber 11 quintile",
       y = "Predicted probability"
     ) +
@@ -403,8 +400,6 @@ plot_differences <- function(contrast_summary) {
     facet_wrap(~ subject_label, nrow = 1) +
     scale_y_continuous(labels = percent_format(accuracy = 1)) +
     labs(
-      title = "Posterior gender difference at the same Saber 11 quintile",
-      subtitle = "Women minus men; values below zero indicate lower STEM probability for women",
       x = "Saber 11 quintile",
       y = "Probability difference"
     ) +
@@ -419,7 +414,6 @@ plot_probability_women_lower <- function(contrast_summary) {
     facet_wrap(~ subject_label, nrow = 1) +
     scale_y_continuous(labels = percent_format(accuracy = 1), limits = c(0, 1)) +
     labs(
-      title = "Posterior probability that women have lower STEM probability than men",
       x = "Saber 11 quintile",
       y = "Pr(Women < Men)"
     ) +
@@ -434,8 +428,6 @@ plot_offset_contrasts <- function(offset_summary) {
     facet_wrap(~ subject_label, nrow = 1) +
     scale_y_continuous(labels = percent_format(accuracy = 1)) +
     labs(
-      title = "One-quintile offset contrast",
-      subtitle = "Women one quintile higher minus men one quintile lower",
       x = NULL,
       y = "Probability difference"
     ) +

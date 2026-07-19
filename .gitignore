@@ -23,3 +23,7 @@ Thumbs.db
 
 # Temporary git artefacts created by sandboxed environments
 .git/config.lock
+
+# Manuscript and submission files are kept out of this repository
+*.docx
+references.bib

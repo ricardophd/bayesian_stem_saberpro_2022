@@ -134,6 +134,9 @@ outputs/figures/02_bayesian_predicted_probability_by_quintile_gender.png
 outputs/figures/03_bayesian_gender_difference_same_quintile.png
 ```
 
+Figures are exported without embedded titles; titles and captions are added in
+the manuscript. Facet labels are in English.
+
 ## Reproducibility Controls
 
 Optional environment variables:
